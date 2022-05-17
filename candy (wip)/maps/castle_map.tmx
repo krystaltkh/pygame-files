@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="1.4.1" orientation="orthogonal" renderorder="right-down" width="50" height="30" tilewidth="70" tileheight="70" infinite="0" nextlayerid="6" nextobjectid="6">
+ <tileset firstgid="1" source="blue_bg.tsx"/>
+ <tileset firstgid="2" source="floor_tiles.tsx"/>
+ <layer id="1" name="blue sky" width="50" height="30">
+  <data encoding="base64" compression="zstd">
+   KLUv/WBwFl0AACABAAAAAQBpd++I
+  </data>
+ </layer>
+ <layer id="2" name="floor" width="50" height="30">
+  <data encoding="base64" compression="zstd">
+   KLUv/WBwFlUBAKAAAEkASgAAAEtMAFMAAABUVQAAAAYAvB2l73AK767GhoYKO0Dh0+kBFg==
+  </data>
+ </layer>
+ <layer id="4" name="ladders" width="50" height="30">
+  <data encoding="base64" compression="zstd">
+   KLUv/WBwFvUDANQCAABKAAAAS0wATABMTElJAEkAgQAAAIJJAEpKUwAAAFRVAEkAWwBbAADAAF1EIKDQcOvwAl3StAFNytYzFPWDZpEfHwyRw1QzrHii3Cdj++ka2ilye0rXB03zdaduoJ2FcCJlyC5EDUTN0gaKmjGJGpqiWEb1IpobrsbnLQ==
+  </data>
+ </layer>
+ <objectgroup id="5" name="objects">
+  <object id="1" name="player" x="35" y="1995" width="35" height="35"/>
+  <object id="4" name="lifeup" x="2607.5" y="1557.5" width="52.5" height="52.5"/>
+ </objectgroup>
+</map>

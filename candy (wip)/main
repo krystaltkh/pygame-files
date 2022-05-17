@@ -1,0 +1,55 @@
+import pygame as pg
+
+class Game:
+    def __init__(self):
+        # intialise game window, etc
+        # create less lag for sound: 2048 can be edited to other powers of 2.
+        pg.mixer.pre_init(44100, -16, 1, 2048) # values < 2048 will reduce lag, but twists the sound played
+        pg.init() # initialises pygame
+        self.screen = pg.display.set_mode((WIDTH, HEIGHT))
+        pg.display.set_caption(TITLE) # what will appear at top of the window
+        self.clock = pg.time.Clock() # handles speed and how fast we're going
+        # to hold down keys for movement:
+        pg.key.set_repeat(500, 100) # if key is held down for 500ms, repeat movement of key every 100ms
+        self.load_data()
+
+    def draw_text(self, text, font_name, size, colour, x, y, align="nw"):
+        font = pg.font.Font(font_name, size)
+        text_surface = font.render(text, True, colour)
+        text_rect = text_surface.get_rect()
+        if align == "nw": # northwest
+            text_rect.topleft = (x, y)
+        if align == "ne": # northeast
+            text_rect.topright = (x, y)
+        if align == "sw": # southwest
+            text_rect.bottomleft = (x, y)
+        if align == "se": #southeast
+            text_rect.bottomright = (x, y)
+        if align == "n":
+            text_rect.midtop = (x, y)
+        if align == "s":
+            text_rect.midbottom = (x, y)
+        if align == "e":
+            text_rect.midright = (x, y)
+        if align == "w":
+            text_rect.midleft = (x, y)
+        if align == "center":
+            text_rect.center = (x, y)
+        self.screen.blit(text_surface, text_rect)
+
+    def load_data(self):
+        game_folder = path.dirname(__file__)
+        img_folder = path.join(game_folder, 'img')
+        snd_folder = path.join(game_folder, 'snd')
+        music_folder = path.join(game_folder, 'music')
+        self.map_folder = path.join(game_folder, 'maps')
+        # self.title_font = path.join(img_folder, 'ZOMBIE.TTF')
+        # self.hud_font = path.join(img_folder, 'Impacted2.0.ttf')
+        # self.dim_screen = pg.Surface(self.screen.get_size()).convert_alpha()
+        # self.dim_screen.fill((0, 0, 0, 180)) # larger alpha channel -> darker
+        self.player_img = pg.image.load(path.join(img_folder, PLAYER_IMG)).convert_alpha()
+
+        # Sound loading
+        #pg.mixer.music.load(path.join(music_folder, BG_MUSIC))
+        self.effects_sounds = {}
+        pass
